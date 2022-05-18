@@ -58,7 +58,16 @@ class eyeController:
             "d":    (self.eye_images['eye_frustrate_closed.png'], self.eye_images['eye_frustrate_closed.png'], True),
             "l":    (self.eye_images['eye_question.png'], self.eye_images['eye_question.png'], False),
             "r":    (self.eye_images['eye_exclaim.png'], self.eye_images['eye_exclaim.png'], True),
+            "ld":   (self.eye_images['eye_heart.png'], self.eye_images['eye_heart.png'], True)
+            # "lu":
+            # "lr":
+            # "du":
+            # "dr":
             "ur":   (self.eye_images['eye_frustrate_closed.png'], self.eye_images['eye_open.png'], True),
+            # "ldu":
+            # "ldr":
+            # "lur":
+            # "dur": 
             "ldur": (self.eye_images['eye_loading.png'], self.eye_images['eye_loading.png'], False)
         }
 
