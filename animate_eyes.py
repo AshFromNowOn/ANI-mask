@@ -22,7 +22,7 @@ class eyeController:
             cs=ST7789.BG_SPI_CS_FRONT,
             dc=9,
             backlight=19,
-            spi_speed_hz=80 * 1000 * 1000,
+            spi_speed_hz=40 * 1000 * 1000,
             offset_left=40,
             offset_top=0
         )
@@ -33,7 +33,7 @@ class eyeController:
             cs=ST7789.BG_SPI_CS_BACK,
             dc=9,
             backlight=18,
-            spi_speed_hz=80 * 1000 * 1000,
+            spi_speed_hz=40 * 1000 * 1000,
             offset_left=40,
             offset_top=0
         )
@@ -58,6 +58,7 @@ class eyeController:
             "d":    (self.eye_images['eye_frustrate_closed.png'], self.eye_images['eye_frustrate_closed.png'], True),
             "l":    (self.eye_images['eye_question.png'], self.eye_images['eye_question.png'], False),
             "r":    (self.eye_images['eye_exclaim.png'], self.eye_images['eye_exclaim.png'], True),
+            "ur":   (self.eye_images['eye_frustrate_closed.png'], self.eye_images['eye_open.png'], True),
             "ldur": (self.eye_images['eye_loading.png'], self.eye_images['eye_loading.png'], False)
         }
 
@@ -118,7 +119,7 @@ class eyeController:
             try:
                 self.controller = InputDevice("/dev/input/{}".format(control_device))
                 connected = True
-            except FileNotFoundError, PermissionError:
+            except (FileNotFoundError, PermissionError):
                 print("No Controller found, retrying connection")
                 time.sleep(1)
 
